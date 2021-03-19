@@ -61,6 +61,23 @@ namespace SpeedrunLinks
                 return false;
 
             var item = inventoryItem.Item;
+
+            var modsComponent = item.GetComponent<Mods>();
+
+            if (modsComponent != null)
+            {
+                var itemMods = modsComponent.ItemMods;
+                foreach (var mod in itemMods)
+                {
+                    if (mod.Group == "MovementVelocity")
+                    {
+                        return true;
+                    }
+                }
+            }
+
+
+
             if (item == null || item.Address == 0x0) return false;
 
             if (!item.HasComponent<Sockets>()) return false;
