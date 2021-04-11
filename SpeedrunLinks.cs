@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SpeedrunLinks
 {
-    public class Core : BaseSettingsPlugin<Settings>
+    public class SpeedrunLinks : BaseSettingsPlugin<Settings>
     {
         public override void Render()
         {
